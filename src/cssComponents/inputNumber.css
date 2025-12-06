@@ -1,0 +1,20 @@
+.InputNumber{
+        display: flex;
+        flex-direction: row;
+        flex-wrap:wrap;
+        align-items: center;
+        justify-content: center; 
+        gap: 15px;
+    }
+
+.input-number {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+    width: 100px;
+}
+
+.input-number.error {
+    border-color: red;
+}

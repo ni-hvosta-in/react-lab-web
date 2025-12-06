@@ -49,6 +49,7 @@ export default function AuthForm() {
             if (response.ok) {
                 console.log(data.message);  
                 sessionStorage.setItem('token', data.token);
+                // Сюда переход надо
                 setErrorText("");
             } else {
                 setErrorText(data.message);
