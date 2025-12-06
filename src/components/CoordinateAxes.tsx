@@ -44,7 +44,7 @@ export default function CoordinateAxes({minX, minY, maxX, maxY, stepX, stepY, la
                 xMarkings.map((xMark, i) =>
                     <>
                         <line x1={xMark} y1={-(height)/100} x2={xMark} y2={height/100} className="axis-line"/>
-                        <text x={xMark} y={height/100} className="axis-label" text-anchor="middle" dominant-baseline="hanging">{labels[i]}</text>  
+                        <text x={xMark} y={height/100} className="axis-label" textAnchor="middle" dominant-baseline="hanging">{labels[i]}</text>  
                     </>                 
                 )
             }

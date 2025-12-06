@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function AuthForm() {
 
@@ -7,7 +8,7 @@ export default function AuthForm() {
     const [password, setPassword] = useState("");
     const [repeatPassword, setRepeatPassword] = useState("");
     const [errorTextForUser, setErrorText] = useState("");
-
+    const navigate = useNavigate();
     useEffect(() =>{
         setErrorText("");
     }, [typeOfAuth, login, password, repeatPassword]);
@@ -49,7 +50,7 @@ export default function AuthForm() {
             if (response.ok) {
                 console.log(data.message);  
                 sessionStorage.setItem('token', data.token);
-                // Сюда переход надо
+                navigate("/main");
                 setErrorText("");
             } else {
                 setErrorText(data.message);
