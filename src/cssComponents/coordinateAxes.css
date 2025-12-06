@@ -1,0 +1,10 @@
+.axis-line {
+    stroke: var(--axis-color);
+    stroke-width: 0.5;
+}
+
+.axis-label {
+    fill: var(--axis-color);
+    font-size: 4px;
+    user-select: none;
+}

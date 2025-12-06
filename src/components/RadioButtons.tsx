@@ -12,17 +12,16 @@ export default function RadioButtons({values, label, selected, setValue}: RadioB
         setValue(value);
     }
     
-    const buttons = values.map((button, index) => 
-        <li key={index} className="radio-item">
-            <button type="button"  className={`x-button ${selected === button ? "selected" : ""}`} onClick={() => setSelected(button)}>{button}</button>
-        </li>
-    );
-
     return (
         <div className="radio-wrapper">
             <label>{label}</label>
             <ul className="radioButtons">
-                {buttons}
+                {
+                values.map((button, index) => 
+                    <li key={index} className="radio-item">
+                        <button type="button"  className={`x-button ${selected === button ? "selected" : ""}`} onClick={() => setSelected(button)}>{button}</button>
+                    </li>)
+                }
             </ul>
         </div>
     );

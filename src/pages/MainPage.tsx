@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import InputNumber from "../components/InputNumber";
 import RadioButtons from "../components/RadioButtons";
 import "../cssComponents/mainPage.css"
+import GraphPane from "../components/GraphPane";
 export default function MainPage(){
 
     const [x, setX] = useState("");
@@ -18,11 +19,14 @@ export default function MainPage(){
     
     return (
         <div className="wrapper">
+
+            <GraphPane currentR = {Number(r)}/>
             <form className="form">
                 <RadioButtons values = {xValues} label={"Выберите X"} selected = {x} setValue={setX}/> 
                 <InputNumber label={"Введите Y"} setNum={setY}/>
                 <RadioButtons values = {rValues} label={"Выберите R"} selected = {r} setValue={setR}/> 
             </form>
+            
         </div>
     )
 }
