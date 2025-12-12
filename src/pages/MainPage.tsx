@@ -6,6 +6,7 @@ import GraphPane from "../components/GraphPane";
 import toast from "react-hot-toast";
 import { Point } from "../classes/Point";
 import { useNavigate } from "react-router-dom";
+import Table from "../components/Table";
 
 export default function MainPage(){
 
@@ -125,6 +126,7 @@ export default function MainPage(){
                 <RadioButtons values = {rValues} label={"Выберите R"} selected = {r} setValue={setR}/> 
                 <button type="submit">Отправить</button>
             </form>
+            <Table points={points}/>
             
         </div>
     )
