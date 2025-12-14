@@ -1,14 +1,14 @@
 import { useEffect, useState, type FormEvent } from "react";
-import InputNumber from "../components/InputNumber";
-import RadioButtons from "../components/RadioButtons";
+import {InputNumber} from "../components/InputNumber";
+import {RadioButtons} from "../components/RadioButtons";
 import "../cssComponents/mainPage.css"
 import GraphPane from "../components/GraphPane";
 import toast from "react-hot-toast";
 import { Point } from "../classes/Point";
 import { useNavigate } from "react-router-dom";
-import Table from "../components/Table";
+import {Table} from "../components/Table";
 
-export default function MainPage(){
+export function MainPage(){
 
     const navigate = useNavigate();
     const [x, setX] = useState("");
@@ -118,15 +118,19 @@ export default function MainPage(){
     
     return (
         <div className="wrapper">
-
-            <GraphPane currentR = {Number(r)} points={points}/>
+            <div className="graph">
+                <GraphPane currentR = {Number(r)} points={points}/>
+            </div>
             <form className="form" onSubmit={(event) => sendForm(event)}>
                 <RadioButtons values = {xValues} label={"Выберите X"} selected = {x} setValue={setX}/> 
                 <InputNumber label={"Введите Y"} setNum={setY}/>
                 <RadioButtons values = {rValues} label={"Выберите R"} selected = {r} setValue={setR}/> 
                 <button type="submit">Отправить</button>
             </form>
-            <Table points={points}/>
+
+            <div className = "table">
+                <Table points={points}/>
+            </div>
             
         </div>
     )

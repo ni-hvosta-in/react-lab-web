@@ -1,9 +1,9 @@
 import { useMemo } from "react";
 import "../cssComponents/GraphPane.css";
-import CoordinateAxes from "./CoordinateAxes";
+import {CoordinateAxes} from "./CoordinateAxes";
 import type { Point } from "../classes/Point";
-import Areas from "./Areas";
-import PointOnGraph from "./PointOnGraph";
+import {Areas} from "./Areas";
+import {PointOnGraph} from "./PointOnGraph";
 
 interface GraphPaneProps {
     currentR:number

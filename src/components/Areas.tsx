@@ -3,7 +3,7 @@ interface AreasProps{
     Rx: number;
     Ry: number;
 }
-export default function Areas({Rx, Ry} : AreasProps){
+export function Areas({Rx, Ry} : AreasProps){
     return (
         <g>
             <rect x={-Rx/2} y={-Ry} width={Rx/2} height={Ry} className="area"/>

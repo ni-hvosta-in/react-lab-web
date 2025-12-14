@@ -7,7 +7,7 @@ interface PointOnGraphProps{
     Rx: number;
     Ry: number;
 }
-export default function PointOnGraph({point, currentR, Rx, Ry}: PointOnGraphProps){
+export function PointOnGraph({point, currentR, Rx, Ry}: PointOnGraphProps){
 
     let cx: number = useMemo(() => {
         return (point.x / point.r) * Rx

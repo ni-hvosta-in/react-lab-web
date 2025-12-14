@@ -5,7 +5,7 @@ interface TableProps {
     points: Point[];
 }
 
-export default function Table({points} : TableProps){
+export function Table({points} : TableProps){
     return (
         <div className="table-wrapper">
             <table className="results-table">

@@ -12,7 +12,7 @@ interface CoordinateAxesProps {
     
 }
 
-export default function CoordinateAxes({minX, minY, maxX, maxY, stepX, stepY, labels}:CoordinateAxesProps){
+export function CoordinateAxes({minX, minY, maxX, maxY, stepX, stepY, labels}:CoordinateAxesProps){
 
     let width: number = maxX - minX;
     let height: number = maxY - minY;

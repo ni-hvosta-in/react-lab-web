@@ -6,7 +6,7 @@ interface RadioButtonsProps {
     selected: string;
     setValue: (value: string) => void;
 }
-export default function RadioButtons({values, label, selected, setValue}: RadioButtonsProps) {
+export function RadioButtons({values, label, selected, setValue}: RadioButtonsProps) {
     
     function setSelected(value: string){
         setValue(value);
@@ -18,9 +18,10 @@ export default function RadioButtons({values, label, selected, setValue}: RadioB
             <ul className="radioButtons">
                 {
                 values.map((button, index) => 
-                    <li key={index} className="radio-item">
-                        <button type="button"  className={`x-button ${selected === button ? "selected" : ""}`} onClick={() => setSelected(button)}>{button}</button>
-                    </li>)
+                    <button key = {index} type="button" className={`x-button ${selected === button ? "selected" : ""}`}
+                    onClick={() => setSelected(button)}>
+                        {button}
+                    </button>)
                 }
             </ul>
         </div>

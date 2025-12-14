@@ -1,6 +1,16 @@
 import "../cssComponents/startPage.css"
-import AuthForm from "../components/AuthForm"
-export default function StartPage(){
+import {AuthForm} from "../components/AuthForm"
+export function StartPage(){
+
+    document.cookie = "testCookie=123;";
+    document.cookie = "jsessionsId=1;";
+
+    const rawCookie = document.cookie.split(";");
+    console.log(rawCookie);
+    
+    let cookie : string [] = [];
+    rawCookie.forEach(raw => {cookie.push(raw.split("=")[0])});
+    console.log(cookie);
     return (
         <div className='main'>
         <h1>Лабораторная работа №4</h1>

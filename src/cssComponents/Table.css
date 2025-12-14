@@ -44,14 +44,13 @@
 }
 
 .table-wrapper {
-  display: flex;
-  flex-direction: column;
-  margin-top: 15px;
-  max-height: 305px;        
-  box-sizing: border-box;
-  padding: 8px 0 0 0;   
-  overflow-y: auto;     
-  align-self: start;
+    display: flex;
+    flex-direction: column;
+    margin: 15px auto 0 auto;
+    max-height: 305px;
+    box-sizing: border-box;
+    padding: 8px 0 0 0;
+    overflow-y: auto;
 }
 
 @media (prefers-color-scheme: light){

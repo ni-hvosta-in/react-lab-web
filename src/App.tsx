@@ -1,7 +1,8 @@
-import {createBrowserRouter, RouterProvider } from 'react-router-dom';
+import {createBrowserRouter, RouterProvider} from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
-import StartPage from './pages/StartPage';
-import MainPage from './pages/MainPage';
+import {StartPage} from './pages/StartPage';
+import {MainPage} from './pages/MainPage';
+import { TestPage } from './pages/TestPage';
 
 function App() {
     const router = createBrowserRouter([
@@ -12,6 +13,10 @@ function App() {
         {
             path: "/main",
             element: <MainPage/>
+        },
+        {
+            path: "/test",
+            element: <TestPage/>
         }
     ]);
 

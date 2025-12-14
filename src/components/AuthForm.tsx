@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function AuthForm() {
+export function AuthForm() {
 
     const [typeOfAuth, setTypeOfAuth] = useState("");
     const [login, setLogin] = useState("");

@@ -4,7 +4,7 @@ interface InputNumberProps {
     setNum: (num: string) => void;        
 }
 
-export default function InputNumber({label, setNum}:InputNumberProps){
+export function InputNumber({label, setNum}:InputNumberProps){
 
     return (
         <div className = "InputNumber">
