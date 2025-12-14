@@ -1,40 +1,34 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export function TestPage(){
 
-    let [login, setLogin] = useState("");
-    let [password, setPassword] = useState("");
-    let [succses, setSuccses] = useState(false);
-    let typeOfAuth = "Sign in"
-    async function submitForm(event: React.FormEvent<HTMLFormElement>) {
-        event.preventDefault();
-        const response = await fetch('http://localhost:8080/auth', {
-            method: "POST",
-            headers: {
-                 'Content-Type': 'application/json',
-            }, 
-            body: JSON.stringify ({
-                login: login,
-                password: password,
-                typeOfAuth: typeOfAuth
-            })
-        });
-        setSuccses(response.ok);
-        console.log(response);
-    }
+    const [words, setWords] = useState<string[]>([]);
+    useEffect(() => {
+
+        async function getWords() : Promise<void> {
+
+            let words: string[] = [];
+            const response = await fetch('http://localhost:8080/words');
+            if (response.ok){
+                words = await response.json();
+                console.log(words);
+            }
+            setWords(words);
+        }
+
+        getWords();
+    }, []);
+    const [input, setInput] = useState("");
+
 
     return (
-        
-            <form style={{
-              display:"flex",
-              flexDirection: "column"  
-            }}
-            onSubmit={submitForm}
-            >
-                <input type="text" placeholder="Логин" onChange = {event => setLogin(event.target.value)}/>
-                <input type="password" placeholder="Пароль" onChange = {event => setPassword(event.target.value)}/>
-                <button type="submit">Войти</button>
-                {succses && <p>ПОБЕДА</p>}
-            </form>
-        );
+        <>
+            <input type="text" placeholder="your word" onChange={(event) => setInput(event.target.value)}/>
+            <ul>
+                {words.map((word, index) => 
+                    word.includes(input) && <li key={index}>{word}</li>
+                )}
+            </ul>
+        </>
+    );
 }

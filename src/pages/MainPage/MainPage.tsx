@@ -1,12 +1,12 @@
 import { useEffect, useState, type FormEvent } from "react";
-import {InputNumber} from "../components/InputNumber";
-import {RadioButtons} from "../components/RadioButtons";
+import {InputNumber} from "../../components/InputNumber/InputNumber";
+import {RadioButtons} from "../../components/RadioButtons/RadioButtons";
 import "../cssComponents/mainPage.css"
-import GraphPane from "../components/GraphPane";
+import GraphPane from "../../components/GraphPane/GraphPane";
 import toast from "react-hot-toast";
-import { Point } from "../classes/Point";
+import { Point } from "../../classes/Point";
 import { useNavigate } from "react-router-dom";
-import {Table} from "../components/Table";
+import {Table} from "../../components/Table/Table";
 
 export function MainPage(){
 
@@ -27,7 +27,7 @@ export function MainPage(){
             navigate('/');
         }
 
-        async function getPoints() {
+        async function getPoints() : Promise<void> {
             
             let response = await fetch(serverAdress + "/hit", {
                 method: "GET",
@@ -59,7 +59,7 @@ export function MainPage(){
     let xValues: string[] = ['-4', '-3', '-2', '-1', '0', '1', '2', '3', '4'];
     let rValues: string[] = ['1', '2', '3', '4', '5'];
 
-     async function sendForm(event: FormEvent<HTMLFormElement>){
+    async function sendForm(event: FormEvent<HTMLFormElement>) : Promise<void>{
 
         event.preventDefault();
         if (x === "" || y === "" || r === ""){
@@ -71,7 +71,7 @@ export function MainPage(){
         
     }
 
-    async function sendPoint(x: number, y: number, r: number) {
+    async function sendPoint(x: number, y: number, r: number) : Promise<void> {
 
         console.log(`Token: ${token}`);
         let response = await fetch(serverAdress + "/hit", 

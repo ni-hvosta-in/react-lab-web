@@ -20,7 +20,7 @@ export function AuthForm() {
 
     type AuthType = typeof AuthType[keyof typeof AuthType];
 
-    async function postForm(event: React.FormEvent<HTMLFormElement>){
+    async function postForm(event: React.FormEvent<HTMLFormElement>) : Promise<void>{
         
         event.preventDefault();
         

@@ -1,5 +1,5 @@
 import "../cssComponents/startPage.css"
-import {AuthForm} from "../components/AuthForm"
+import {AuthForm} from "../../components/AuthForm/AuthForm"
 export function StartPage(){
 
     document.cookie = "testCookie=123;";
