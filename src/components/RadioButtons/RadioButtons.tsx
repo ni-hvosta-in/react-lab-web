@@ -1,4 +1,4 @@
-import "../cssComponents/RadioButtons.css"
+import "./RadioButtons.css"
 
 interface RadioButtonsProps {
     values: string[]

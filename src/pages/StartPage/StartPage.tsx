@@ -1,4 +1,4 @@
-import "../cssComponents/startPage.css"
+import "./startPage.css"
 import {AuthForm} from "../../components/AuthForm/AuthForm"
 export function StartPage(){
 

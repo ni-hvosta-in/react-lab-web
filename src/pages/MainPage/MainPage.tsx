@@ -1,7 +1,7 @@
 import { useEffect, useState, type FormEvent } from "react";
 import {InputNumber} from "../../components/InputNumber/InputNumber";
 import {RadioButtons} from "../../components/RadioButtons/RadioButtons";
-import "../cssComponents/mainPage.css"
+import "./mainPage.css"
 import GraphPane from "../../components/GraphPane/GraphPane";
 import toast from "react-hot-toast";
 import { Point } from "../../classes/Point";

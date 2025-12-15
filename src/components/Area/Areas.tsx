@@ -1,4 +1,4 @@
-import "../cssComponents/Areas.css"
+import "./Areas.css"
 interface AreasProps{
     Rx: number;
     Ry: number;

@@ -1,4 +1,4 @@
-import "../cssComponents/inputNumber.css"
+import "./inputNumber.css"
 interface InputNumberProps {
     label: string;
     setNum: (num: string) => void;        

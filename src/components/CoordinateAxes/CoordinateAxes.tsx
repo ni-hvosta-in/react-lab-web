@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import "../cssComponents/coordinateAxes.css"
+import "./coordinateAxes.css"
 
 interface CoordinateAxesProps {
     minX: number;  

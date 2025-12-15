@@ -1,5 +1,5 @@
-import type { Point } from "../classes/Point";
-import "../cssComponents/Table.css";
+import type { Point } from "../../classes/Point";
+import "./Table.css";
 
 interface TableProps {
     points: Point[];

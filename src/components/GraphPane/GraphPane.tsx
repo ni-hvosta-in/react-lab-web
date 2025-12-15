@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import "../cssComponents/GraphPane.css";
+import "./GraphPane.css";
 import {CoordinateAxes} from "../CoordinateAxes/CoordinateAxes";
 import type { Point } from "../../classes/Point";
 import {Areas} from "../Area/Areas";
