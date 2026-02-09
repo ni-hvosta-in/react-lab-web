@@ -33,6 +33,7 @@ export function MainPage(){
                 method: "GET",
                 headers: {
                     "Authorization": token
+                    
                 }
             });
 
